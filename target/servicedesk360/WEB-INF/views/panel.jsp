@@ -13,11 +13,15 @@
     <p><strong>Correo:</strong> ${sessionScope.usuarioAutenticado.correo}</p>
     <p><strong>Rol:</strong> ${sessionScope.usuarioAutenticado.rol}</p>
     <p><strong>Estado activo:</strong> ${sessionScope.usuarioAutenticado.activo}</p>
-    
+
+    <div class="acciones-formulario" style="margin: 20px 0;">
+        <a href="${pageContext.request.contextPath}/tickets" class="boton">Gestionar tickets</a>
+    </div>
+
     <div class="tarjetas-panel">
         <section class="tarjeta-panel">
             <h2>Solicitudes</h2>
-            <p>Módulo que se desarrollará progresivamente.</p>
+            <p>Módulo de tickets de soporte técnico habilitado.</p>
         </section>
         <section class="tarjeta-panel">
             <h2>Equipos</h2>
@@ -28,6 +32,7 @@
             <p>Se incorporarán durante la Unidad 5.</p>
         </section>
     </div>
+
     <form action="${pageContext.request.contextPath}/cerrar-sesion" method="post" style="margin-top: 24px;">
         <button type="submit" class="boton">Cerrar sesión</button>
     </form>
