@@ -12,6 +12,14 @@ import java.util.Properties;
 public final class ConexionBD {
     private static final Properties CONFIG = cargarConfiguracion();
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new ExceptionInInitializerError("No se pudo registrar el driver MySQL: " + e.getMessage());
+        }
+    }
+
     private ConexionBD() {}
 
     private static Properties cargarConfiguracion() {
